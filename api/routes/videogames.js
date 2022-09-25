@@ -8,10 +8,8 @@ const {
 } = require("../controllers/videogames");
 
 router.get("/", getVideogamesDb);
+router.get("/:id", getVideogameByID);
+router.post("/", saveVideogamesDb);
 
 router.post("/apiVideogames", getApiInfo, saveVideogamesDb);
-
-router.get("/:id", getVideogameByID);
-
-router.post("/", saveVideogamesDb);
 module.exports = router;

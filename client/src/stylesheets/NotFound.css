@@ -1,0 +1,41 @@
+.not__container {
+  height: 100vh;
+  background-image: url(../images/gameover404.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.not__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.not__title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: papayawhip;
+  text-transform: uppercase;
+}
+
+.not__btn button {
+  margin-top: 10px;
+  padding: 1px 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffefd5;
+  border: none;
+  background-color: transparent;
+  border: 3px solid #ffff0095;
+  border-radius: 35px;
+  cursor: pointer;
+}
+
+.not__btn button:hover {
+  border-color: #ffff00;
+  box-shadow: 3px 3px 15px #ffff00 inset;
+}

@@ -1,0 +1,193 @@
+.create__container {
+  /* background-color: green; */
+  height: 87vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create__form_container {
+  width: 50%;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+}
+
+form .create__title {
+  letter-spacing: 6px;
+  border-bottom: 1px solid #ffefd5;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-bottom: 32px;
+  color: #ffefd5;
+  font-weight: 900;
+}
+
+form .create__title h2 span {
+  color: #dc143c;
+}
+
+/* Error input empty */
+.create__error_container p {
+  margin-bottom: 10px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  border: 3px solid darkred;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 900;
+  color: red;
+  letter-spacing: 4px;
+  box-shadow: 2px 2px 15px red inset;
+  opacity: 80%;
+}
+/* Inputs and Selects */
+form .create__inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .create__inputs .create__inputs_name-img,
+form .create__inputs .create__inputs_rating-released,
+form .create__inputs .create__inputs_name-img,
+form .create__selects .create__inputs_selects {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 48%;
+}
+
+form .create__inputs_message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+form .create__selects {
+  display: flex;
+  justify-content: space-between;
+}
+
+form label {
+  display: block;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 3.5px;
+  margin-bottom: 5px;
+  color: #ffefd5;
+}
+
+form .create__inputs .create__inputs_name-img input,
+form .create__inputs_message textarea,
+form .create__inputs .create__inputs_rating-released input {
+  box-shadow: 2px 2px 15px #3498db inset;
+  border-radius: 4px;
+  border: 1px solid #3498db;
+  outline: none;
+  padding: 16px;
+  width: 100%;
+  height: 44px;
+  background-color: transparent;
+  font-size: 17px;
+  color: #ffefd5;
+}
+
+form .create__inputs .create__inputs_name-img input:focus,
+form .create__inputs_message textarea:focus,
+form .create__inputs .create__inputs_rating-released input:focus {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+form .create__inputs_message textarea {
+  color: #ffefd5;
+  overflow: hidden;
+  height: 100px;
+  overflow: hidden;
+  resize: none;
+}
+
+form .create__selects .create__inputs_selects select {
+  box-shadow: 2px 2px 15px #3498db inset;
+  border-radius: 4px;
+  border: 1px solid #3498db;
+  outline: none;
+  padding: 16px;
+  width: 100%;
+  background-color: #1d1616;
+  color: papayawhip;
+  font-size: 17px;
+}
+
+form .create__selects .create__inputs_selects select:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+/* render  */
+.create__render_content {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px 5px;
+  text-align: center;
+}
+.create__render_button {
+  padding: 0 -5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: papayawhip;
+}
+
+.render__btn {
+  display: block;
+  border: 3px solid 3498db;
+  box-shadow: 2px 2px 15px #3498db inset;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.render__btn:hover {
+  box-shadow: 0 0 30px #3498db;
+}
+
+/* Button */
+.create__btn button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  height: 44px;
+  letter-spacing: 3px;
+  outline: none;
+  padding: 0 20px;
+  margin-right: 10px;
+  color: #ffefd5;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.create__btn button[type="submit"] {
+  box-shadow: 2px 2px 15px #07ff07 inset;
+  border-color: #07ff07;
+}
+
+.create__btn button[type="submit"]:disabled {
+  box-shadow: 2px 2px 15px #808080 inset;
+  border-color: #808080;
+}
+
+.create__btn button[type="submit"]:hover {
+  box-shadow: 0 0 30px #07ff07;
+}
+
+.create__btn button[type="reset"] {
+  box-shadow: 2px 2px 15px #ffd700 inset;
+  border-color: #ffd700;
+}
+
+.create__btn button[type="reset"]:hover {
+  box-shadow: 0 0 30px #ffd700;
+}

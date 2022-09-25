@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,900&display=swap");
+
+/* Selects */
+.home__container_select {
+  margin-bottom: 20px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__title_select {
+  text-align: center;
+  color: #ffefd5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.home__option_select {
+  min-width: 235px;
+  padding: 3px 0;
+  background-color: #070d1f;
+  text-align: center;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 2px solid #ffefd5;
+  border-radius: 10px;
+  outline: none;
+  color: papayawhip;
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  cursor: pointer;
+}
+
+.home__btn_reset {
+  padding: 0 5px;
+  border-radius: 10px 5px 10px 5px;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #07ff07;
+  box-shadow: 2px 2px 15px #3498db inset;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.home__btn_reset:hover {
+  transform: rotate(180deg);
+  transition: transform 0.5s linear 0.1s;
+  box-shadow: 0 0 30px #3498db;
+  color: #ffd700;
+  cursor: pointer;
+}
+
+/* Render of Cards */
+.home__render_cards {
+  padding: 30px 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 50px 200px;
+}
+
+.home__link_cards {
+  text-decoration: none;
+}
+
+/* Loading */
+.home__loading h2 {
+  color: transparent;
+  font-size: 1.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.home__loading {
+  display: flex;
+  justify-content: center;
+}
+
+/* error not exist videogame */
+.home__not_exist {
+  height: 80vh;
+  width: 100%;
+  background-image: url(../images/gameover404.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__not_exist h2 {
+  font-size: 7rem;
+  color: #fff;
+}
+
+.home__not_exist button {
+  margin-top: 10px;
+  padding: 1px 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffefd5;
+  border: none;
+  background-color: transparent;
+  border: 3px solid #ffff0095;
+  border-radius: 35px;
+  cursor: pointer;
+}
+
+.home__not_exist button:hover {
+  border-color: #ffff00;
+  box-shadow: 3px 3px 15px #ffff00 inset;
+}
+
+/* Media Query */
+@media (max-width: 900px) {
+  .home__render_cards {
+    margin: 0 150px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    /* gap: 50px 200px; */
+  }
+}

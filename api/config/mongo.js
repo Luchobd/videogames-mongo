@@ -2,7 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 const DB_URI = process.env.DB_URI;
-console.log(DB_URI);
+
 // CONEXION CON ATLAS
 const dbConnect = () => {
   mongoose.connect(

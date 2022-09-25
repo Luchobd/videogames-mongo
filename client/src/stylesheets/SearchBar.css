@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,900&display=swap");
+
+.search__form {
+  display: flex;
+  justify-content: center;
+}
+
+.search__form_btn,
+.search__form_input {
+  background-color: transparent;
+  border: 2px solid #ffefd5;
+  outline: none;
+  border-radius: 0.6em;
+  color: #ffefd5;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  margin: 5px;
+  /* padding: 0.3em 0.5em; */
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.search__form_btn:hover,
+.search__form_btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.search__form_input {
+  box-shadow: 0 0 8px #ffefd5 inset;
+}
+
+.search__form_input:focus {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.search__form_btn {
+  border-color: #ffefd5;
+  color: #fff;
+  box-shadow: 0 0 20px #07ff07 inset;
+  padding: 2px;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.search__form_btn:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
