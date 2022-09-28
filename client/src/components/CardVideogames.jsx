@@ -4,7 +4,7 @@ import "../stylesheets/CardVideogames.css";
 function CardVideogames({ name, genders, rating, background_image }) {
   // let mapGenders =
   //   typeof genders[0] === "object" ? genders.map((item) => item.name) : genders;
-  console.log(genders);
+  // console.log(genders);
   return (
     <div className="card__container">
       <div className="card__content">

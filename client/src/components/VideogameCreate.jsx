@@ -35,6 +35,9 @@ function VideoGameCreate() {
   const allGenders = useSelector((state) => state.genders);
   const [errors, setErrors] = useState({});
 
+  console.log(allVideogames);
+  console.log(allGenders);
+
   const [input, setInput] = useState({
     name: "",
     background_image: "",

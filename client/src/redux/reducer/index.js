@@ -47,6 +47,7 @@ function rootReducer(state = initialState, action) {
 
     case FILTER_BY_GENDER:
       const allVideogames = state.allVideogames;
+      console.log(allVideogames);
 
       const genderFiltered =
         action.payload === "All"

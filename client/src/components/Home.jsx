@@ -159,11 +159,12 @@ function Home() {
           {/* Área donde se verá el listado de videojuegos. Deberá mostrar su: */}
           {allVideogames.length ? (
             <div className="home__render_cards">
-              {currentVideogames?.map((game) => {
+              {currentVideogames?.map((game, index) => {
+                // console.log(game);
                 return (
-                  <div key={game.id}>
+                  <div key={index}>
                     <NavLink
-                      to={`/videogame/${game.id}`}
+                      to={`/videogames/${game._id}`}
                       className="home__link_cards"
                     >
                       <CardVideogames

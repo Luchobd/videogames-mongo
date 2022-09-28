@@ -16,6 +16,7 @@ export const getVideogames = () => async (dispatch) => {
   const resp = await axios.get(
     "https://videogames-mongo.up.railway.app/videogames"
   );
+  console.log(resp.data);
   dispatch({
     type: "GET_VIDEOGAMES",
     payload: resp.data,

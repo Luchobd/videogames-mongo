@@ -7,16 +7,18 @@ import "../stylesheets/VideogameDetail.css";
 
 function VideogameDetail() {
   const dispatch = useDispatch();
-  const { idVideogame } = useParams();
+  const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
-    dispatch(getDetail(idVideogame));
+    dispatch(getDetail(id));
     return () => {
       dispatch(cleanFilter());
     };
-  }, [dispatch, idVideogame]);
+  }, [dispatch, id]);
 
   const gameDetail = useSelector((state) => state.detail);
+  console.log(gameDetail);
 
   // console.log(gameDetail);
   return (
@@ -36,17 +38,19 @@ function VideogameDetail() {
             <article>
               <h2 className="detail__title">{gameDetail.name}</h2>
               <h3 className="detail__genders">
-                {gameDetail.genres
+                {/* {gameDetail.genres
                   ? gameDetail.genres.map((e) => e + " ")
-                  : gameDetail.genders}
+                  : gameDetail.genders} */}
+                {gameDetail.name}
               </h3>
               <h3 className="detail__date">{gameDetail.released}</h3>
               <h3 className="detail__rating">{`🌟 ${gameDetail.rating}`}</h3>
               <h3 className="detail__platforms">{gameDetail.platforms}</h3>
               <h5 className="detail__texto">
-                {gameDetail.description_raw
+                {/* {gameDetail.description_raw
                   ? gameDetail.description_raw
-                  : gameDetail.description}
+                  : gameDetail.description} */}
+                {gameDetail.description}
               </h5>
             </article>
           </section>
