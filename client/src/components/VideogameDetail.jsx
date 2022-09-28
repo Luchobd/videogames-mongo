@@ -8,7 +8,6 @@ import "../stylesheets/VideogameDetail.css";
 function VideogameDetail() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     dispatch(getDetail(id));
@@ -18,9 +17,14 @@ function VideogameDetail() {
   }, [dispatch, id]);
 
   const gameDetail = useSelector((state) => state.detail);
-  console.log(gameDetail);
 
   // console.log(gameDetail);
+  const gendersMap =
+    Object.keys(gameDetail).length &&
+    gameDetail.genders.map((e) => e.name + " ");
+  const platformsMap =
+    Object.keys(gameDetail).length && gameDetail.platforms.map((e) => e + " ");
+
   return (
     <>
       <div className="detail__container">
@@ -37,21 +41,13 @@ function VideogameDetail() {
 
             <article>
               <h2 className="detail__title">{gameDetail.name}</h2>
-              <h3 className="detail__genders">
-                {/* {gameDetail.genres
-                  ? gameDetail.genres.map((e) => e + " ")
-                  : gameDetail.genders} */}
-                {gameDetail.name}
-              </h3>
+              <h3 className="detail__genders">{gameDetail && gendersMap}</h3>
               <h3 className="detail__date">{gameDetail.released}</h3>
               <h3 className="detail__rating">{`🌟 ${gameDetail.rating}`}</h3>
-              <h3 className="detail__platforms">{gameDetail.platforms}</h3>
-              <h5 className="detail__texto">
-                {/* {gameDetail.description_raw
-                  ? gameDetail.description_raw
-                  : gameDetail.description} */}
-                {gameDetail.description}
-              </h5>
+              <h3 className="detail__platforms">
+                {gameDetail && platformsMap}
+              </h3>
+              <h5 className="detail__texto">{gameDetail.description}</h5>
             </article>
           </section>
         </div>

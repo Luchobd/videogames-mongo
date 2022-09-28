@@ -16,7 +16,6 @@ export const getVideogames = () => async (dispatch) => {
   const resp = await axios.get(
     "https://videogames-mongo.up.railway.app/videogames"
   );
-  console.log(resp.data);
   dispatch({
     type: "GET_VIDEOGAMES",
     payload: resp.data,
@@ -39,6 +38,7 @@ export function getGenders() {
 // Create Rute
 export function postVideogames(payload) {
   return async function (dispatch) {
+    console.log(payload);
     const rutaPost = "https://videogames-mongo.up.railway.app/videogames";
     const post = await axios.post(rutaPost, payload);
     return post;
@@ -59,11 +59,9 @@ export function getNameVideogames(name) {
 
 // Detail Rute
 export function getDetail(id) {
-  console.log(id);
   return async function (dispatch) {
     const rutaParams = `https://videogames-mongo.up.railway.app/videogames/${id}`;
     const detail = await axios.get(rutaParams);
-    console.log(detail.data);
     return dispatch({
       type: "GET_DETAILS",
       payload: detail.data,

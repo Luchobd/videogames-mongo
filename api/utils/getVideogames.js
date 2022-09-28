@@ -20,27 +20,23 @@ const getApiInfo = async (req, res, next) => {
       const genresEach = e.genres.map((e) => e.name);
       let arrayGenres = [];
       for (let i = 0; i < genresEach.length; i++) {
-        const uwu = genres.filter((e) => e.name === genresEach[i]);
-        arrayGenres.push(uwu);
+        const genresFilter = genres.filter((e) => e.name === genresEach[i]);
+        arrayGenres.push(genresFilter);
       }
-      const uwu2 = arrayGenres.flat();
-      const uwu3 = uwu2.map((e) => e._id);
-      console.log(uwu3);
+      const genresFlat = arrayGenres.flat();
+      const genresMap = genresFlat.map((e) => e._id);
+      console.log(genresMap);
       //   console.log(uwu2);
       //   const filter = genres.map((e) => e.name === genresEach[0]);
       getGames.push({
         idVideogame: e.id,
         name: e.name,
         background_image: e.background_image,
-        genders: uwu3,
+        genders: genresMap,
         description: descriptionGame,
-        // .join().split(","),
         released: e.released,
         rating: e.rating,
-        platforms: e.platforms
-          .map((e) => e.platform.name)
-          .join()
-          .split(","),
+        platforms: e.platforms.map((e) => e.platform.name),
       });
     });
     numeroPagina++;

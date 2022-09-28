@@ -160,7 +160,6 @@ function Home() {
           {allVideogames.length ? (
             <div className="home__render_cards">
               {currentVideogames?.map((game, index) => {
-                // console.log(game);
                 return (
                   <div key={index}>
                     <NavLink
