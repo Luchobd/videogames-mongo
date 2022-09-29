@@ -37,23 +37,14 @@ function VideoGameCreate() {
 
   const [input, setInput] = useState({
     name: "",
-    background_image: "",
     description: "",
     released: "",
     rating: "",
-    genders: [],
     platforms: [],
+    genders: [],
+    background_image: "",
+    createdInDb: true,
   });
-
-  // const inputs = {
-  //   name: input.name,
-  //   background_image: input.background_image,
-  //   description: input.description,
-  //   released: input.released,
-  //   rating: input.rating,
-  //   genders: input.gender,
-  //   platforms: input.platforms.join(", "),
-  // };
 
   const allPlatforms = platformsList.map((item) => ({ name: item }));
 
@@ -76,20 +67,27 @@ function VideoGameCreate() {
   };
 
   const handleSelectGenders = (e) => {
-    if (e.target.value !== "All")
-      setInput({
-        ...input,
-        genders: [...input.genders, e.target.value],
-      });
+    if (!input.genders.includes(e.target.value))
+      if (e.target.value !== "All")
+        setInput({
+          ...input,
+          genders: [...input.genders, e.target.value],
+        });
+    console.log(input.genders[0]);
+  };
+
+  const functionId = (data) => {
+    return data.split(",").shift();
   };
 
   const handleSelectPlatforms = (e) => {
-    if (e.target.value !== "All")
-      if (!input.platforms.includes(e.target.value))
-        setInput({
-          ...input,
-          platforms: [...input.platforms, e.target.value],
-        });
+    if (!input.platforms.includes(e.target.value))
+      if (e.target.value !== "All")
+        if (!input.platforms.includes(e.target.value))
+          setInput({
+            ...input,
+            platforms: [...input.platforms, e.target.value],
+          });
   };
 
   const handleDeleteGenders = (e) => {
@@ -109,9 +107,19 @@ function VideoGameCreate() {
   console.log(input);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     console.log(input);
-    dispatch(postVideogames(input));
+    e.preventDefault();
+
+    const submitFunction = () => {
+      const selectId = input.genders.map((e) => functionId(e));
+      console.log(selectId);
+      const submit = input;
+      submit.genders = selectId;
+      dispatch(postVideogames(submit));
+      console.log(submit);
+    };
+    submitFunction();
+
     // Presenta problemas al limpiar el formulario
     alert("Persona Creado");
     setInput({
@@ -123,7 +131,7 @@ function VideoGameCreate() {
       gender: [],
       platforms: [],
     });
-    // history.push("/home");
+    history.push("/home");
   };
 
   const handleReset = (e) => {
@@ -138,6 +146,7 @@ function VideoGameCreate() {
       platforms: [],
     });
   };
+
   return (
     <div>
       <NavBar />
@@ -253,7 +262,7 @@ function VideoGameCreate() {
               >
                 <option value="All">All</option>
                 {allGenders?.map((el) => (
-                  <option value={el.name} key={el.id}>
+                  <option value={`${el._id},${el.name}`} key={el._id}>
                     {el.name}
                   </option>
                 ))}
@@ -268,7 +277,7 @@ function VideoGameCreate() {
                         onClick={() => handleDeleteGenders(e)}
                         key={index}
                       >
-                        {e}
+                        {e.split(",").pop()}
                       </span>
                     </div>
                   ))}
@@ -316,7 +325,7 @@ function VideoGameCreate() {
               type="submit"
               className="btn__form_submit"
               onClick={(e) => handleSubmit(e)}
-              disabled={Object.entries(errors).length === 0 ? "" : true}
+              disabled={Object.keys(errors).length > 0 ? true : false}
             >
               Create videogames
             </button>

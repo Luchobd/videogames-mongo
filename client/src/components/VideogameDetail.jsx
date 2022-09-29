@@ -18,7 +18,7 @@ function VideogameDetail() {
 
   const gameDetail = useSelector((state) => state.detail);
 
-  // console.log(gameDetail);
+  console.log(gameDetail);
   const gendersMap =
     Object.keys(gameDetail).length &&
     gameDetail.genders.map((e) => e.name + " ");

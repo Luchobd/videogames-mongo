@@ -53,7 +53,7 @@ function rootReducer(state = initialState, action) {
         action.payload === "All"
           ? allVideogames
           : allVideogames.filter((game) =>
-              game.genders.find((el) => el === action.payload)
+              game.genders.find((el) => el.name === action.payload)
             );
 
       return {
