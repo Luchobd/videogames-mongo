@@ -147,6 +147,10 @@ function VideoGameCreate() {
     });
   };
 
+  // useEffect(() => {
+
+  // }, []);
+
   return (
     <div>
       <NavBar />
@@ -325,7 +329,7 @@ function VideoGameCreate() {
               type="submit"
               className="btn__form_submit"
               onClick={(e) => handleSubmit(e)}
-              disabled={Object.keys(errors).length > 0 ? true : false}
+              disabled={Object.keys(errors).length === 0 ? "" : true}
             >
               Create videogames
             </button>
