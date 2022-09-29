@@ -108,7 +108,7 @@
 
 button:hover::before,
 button:focus::before {
-  opacity: 0;
+  opacity: 1;
 }
 
 button::after,
@@ -136,7 +136,7 @@ button:focus::after {
   0% {
     width: 30px;
     height: 30px;
-    opacity: 0;
+    opacity: 1;
   }
   100% {
     width: 300px;
