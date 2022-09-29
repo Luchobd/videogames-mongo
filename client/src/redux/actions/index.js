@@ -38,7 +38,6 @@ export function getGenders() {
 // Create Rute
 export function postVideogames(payload) {
   return async function (dispatch) {
-    console.log(payload);
     const rutaPost = "https://videogames-mongo.up.railway.app/videogames";
     const post = await axios.post(rutaPost, payload);
     return post;

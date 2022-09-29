@@ -9,7 +9,7 @@ const showGendersDb = async (req, res) => {
 const saveGenderDb = async (req, res) => {
   try {
     const apiGenders = req.body;
-    console.log(apiGenders);
+
     // no hace falta recorrerlo... es decir no se usa el forEach
     const result = await genderModel.create(apiGenders);
     console.log(result);

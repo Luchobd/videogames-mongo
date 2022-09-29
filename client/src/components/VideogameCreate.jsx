@@ -73,7 +73,6 @@ function VideoGameCreate() {
           ...input,
           genders: [...input.genders, e.target.value],
         });
-    console.log(input.genders[0]);
   };
 
   const functionId = (data) => {
@@ -104,19 +103,16 @@ function VideoGameCreate() {
     });
   };
 
-  console.log(input);
-
   const handleSubmit = (e) => {
-    console.log(input);
     e.preventDefault();
 
     const submitFunction = () => {
       const selectId = input.genders.map((e) => functionId(e));
-      console.log(selectId);
+
       const submit = input;
       submit.genders = selectId;
       dispatch(postVideogames(submit));
-      console.log(submit);
+      // console.log(submit);
     };
     submitFunction();
 

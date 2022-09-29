@@ -25,9 +25,7 @@ const getApiInfo = async (req, res, next) => {
       }
       const genresFlat = arrayGenres.flat();
       const genresMap = genresFlat.map((e) => e._id);
-      console.log(genresMap);
-      //   console.log(uwu2);
-      //   const filter = genres.map((e) => e.name === genresEach[0]);
+
       getGames.push({
         idVideogame: e.id,
         name: e.name,

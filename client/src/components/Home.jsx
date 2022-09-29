@@ -197,6 +197,4 @@ function Home() {
   );
 }
 
-// 1:17:00 -> video 3
-
 export default Home;

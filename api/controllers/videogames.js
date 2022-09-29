@@ -39,7 +39,7 @@ const getVideogameByID = async (req, res) => {
 const saveVideogamesDb = async (req, res) => {
   try {
     const apiVideogames = req.body;
-    console.log(apiVideogames);
+
     // no hace falta recorrerlo... es decir no se usa el forEach
     const result = await videogameModel.create(apiVideogames);
     // console.log(result);
