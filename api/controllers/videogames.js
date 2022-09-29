@@ -52,15 +52,15 @@ const saveVideogamesDb = async (req, res) => {
 // Videogames Delete
 const deleteVideogameDb = async (req, res) => {
   const { id } = req.params;
-  try {
-    const deleteVideogames = await Videogame.findByPk(id);
-    if (deleteVideogames) {
-      await Videogame.destroy({ where: { _id: id } });
-      return res.status(200).json({ msg: "Videogames deleted" });
-    }
-  } catch (error) {
-    res.status(404).send("Not Found");
-  }
+  // try {
+  // await videogameModel.findById(id);
+
+  await videogameModel.delete({ _id: id });
+
+  return res.status(200).json({ msg: "Videogames deleted" });
+  // } catch (error) {
+  //   res.status(404).send("Not Found");
+  // }
 };
 
 module.exports = {
