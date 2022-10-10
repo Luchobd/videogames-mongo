@@ -143,13 +143,13 @@ form .create__selects .create__inputs_selects select:hover {
 .render__btn {
   display: block;
   border: 3px solid 3498db;
-  box-shadow: 2px 2px 15px #3498db inset;
+  box-shadow: 2px 2px 15px #07ff07 inset;
   border-radius: 5px;
   cursor: pointer;
+  padding: 0 5px;
 }
 
 .render__btn:hover {
-  box-shadow: 0 0 30px #ff0000;
   box-shadow: 2px 2px 15px #ff0000 inset;
 }
 
@@ -246,5 +246,18 @@ form .create__selects .create__inputs_selects select:hover {
   .create__btn {
     display: flex;
     justify-content: center;
+  }
+
+  .render__btn {
+    box-shadow: 2px 2px 15px #07ff07 inset;
+  }
+
+  .render__btn:active {
+    box-shadow: 2px 2px 15px red inset;
+  }
+
+  .create__error_container p {
+    /* Problemas para renderizar los errores en mobile*/
+    display: none;
   }
 }

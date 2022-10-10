@@ -35,3 +35,9 @@ ul li .navbar__link:hover,
   transition: font-size 0.15s linear 0.1s;
   transition: width 0.15s linear 0.1s;
 }
+
+@media (max-width: 650px) {
+  .nav ul {
+    width: 100vw;
+  }
+}
