@@ -1,13 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,900&display=swap");
 
-.nav {
-  margin-bottom: 70px;
-}
-
 .nav ul {
   z-index: 1000;
+  height: 5vh;
   width: 100%;
-  margin-bottom: 50px;
   padding: 0 30px 0;
   position: fixed;
   top: 0;

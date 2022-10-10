@@ -8,7 +8,7 @@ function LandingPage() {
     <div className="landingPage">
       <picture className="landing__logo">
         <img src={Logo} alt="Logo" />
-        <p className="landing__parragraf">THIS IS YOUR WORLD</p>
+        <p className="landing__parragraf">YOUR WORLD</p>
       </picture>
 
       <div className="landing__init">

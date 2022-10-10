@@ -8,11 +8,11 @@ function NavBar() {
     <header className="header">
       <nav className="nav">
         <ul className="navUl">
-          <picture className="navbar__logo">
+          {/* <picture className="navbar__logo">
             <NavLink className={"navbar__link navbar__link_img"} exact to={"/"}>
               <img src={MiniLogo} alt="Logo" className="navbar__link_img" />
             </NavLink>
-          </picture>
+          </picture> */}
 
           <li>
             <NavLink className={"navbar__link"} to={"/home"}>
@@ -22,14 +22,14 @@ function NavBar() {
 
           <li>
             <NavLink className={"navbar__link"} to={"/videogame"}>
-              Videogame Creation
+              Creation Form
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink className={"navbar__link"} to={"/thanks"}>
               Thanks
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>

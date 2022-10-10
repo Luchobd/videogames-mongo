@@ -74,7 +74,7 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="main__home">
       <NavBar />
       {allVideogames[0] === "Game not found" ? (
         <div className="home__not_exist">

@@ -1,6 +1,6 @@
 .create__container {
   /* background-color: green; */
-  height: 87vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -104,7 +104,8 @@ form .create__inputs_message textarea {
   overflow: hidden;
   height: 100px;
   overflow: hidden;
-  resize: none;
+  /* overflow: scroll; */
+  /* resize: none; */
 }
 
 form .create__selects .create__inputs_selects select {
@@ -148,7 +149,8 @@ form .create__selects .create__inputs_selects select:hover {
 }
 
 .render__btn:hover {
-  box-shadow: 0 0 30px #3498db;
+  box-shadow: 0 0 30px #ff0000;
+  box-shadow: 2px 2px 15px #ff0000 inset;
 }
 
 /* Button */
@@ -190,4 +192,59 @@ form .create__selects .create__inputs_selects select:hover {
 
 .create__btn button[type="reset"]:hover {
   box-shadow: 0 0 30px #ffd700;
+}
+
+@media (max-width: 650px) {
+  .create__inputs {
+    display: flex;
+    flex-direction: column;
+  }
+  .create__selects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form .create__inputs .create__inputs_name-img,
+  form .create__inputs .create__inputs_rating-released,
+  form .create__inputs .create__inputs_name-img,
+  form .create__selects .create__inputs_selects {
+    width: auto;
+    margin-bottom: 7px;
+    /* background-color: red; */
+  }
+  form .create__inputs_message {
+    margin-bottom: 7px;
+  }
+  form .create__title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  form label {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 0;
+  }
+
+  form .create__inputs .create__inputs_name-img input,
+  form .create__inputs_message textarea,
+  form .create__inputs .create__inputs_rating-released input,
+  form .create__selects .create__inputs_selects select,
+  .create__btn button[type="reset"],
+  .create__btn button[type="submit"] {
+    padding: 5px 0;
+    text-align: center;
+    height: auto;
+  }
+
+  .create__render_content {
+    margin: 20px 0 5px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .create__btn {
+    display: flex;
+    justify-content: center;
+  }
 }

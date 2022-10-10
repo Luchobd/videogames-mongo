@@ -39,7 +39,7 @@ function VideogameDetail() {
               />
             </picture>
 
-            <article>
+            <article className="detail__text">
               <h2 className="detail__title">{gameDetail.name}</h2>
               <h3 className="detail__genders">{gameDetail && gendersMap}</h3>
               <h3 className="detail__date">{gameDetail.released}</h3>
@@ -48,16 +48,21 @@ function VideogameDetail() {
                 {gameDetail && platformsMap}
               </h3>
               <h5 className="detail__texto">{gameDetail.description}</h5>
+              <div className="detail__btn">
+                <NavLink to="/home">
+                  <button className="btn__back">Home</button>
+                </NavLink>
+              </div>
             </article>
           </section>
         </div>
       </div>
 
-      <div className="detail__btn">
+      {/* <div className="detail__btn">
         <NavLink to="/home">
           <button className="btn__back">Home</button>
         </NavLink>
-      </div>
+      </div> */}
     </>
   );
 }

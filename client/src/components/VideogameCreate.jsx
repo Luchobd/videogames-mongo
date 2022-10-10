@@ -180,155 +180,157 @@ function VideoGameCreate() {
           </aside>
 
           {/* Inputs and Selects */}
-          <div className="create__inputs">
-            <div className="create__inputs_name-img">
-              <label htmlFor="name"> Name </label>
+          <div className="inputs__all">
+            <div className="create__inputs">
+              <div className="create__inputs_name-img">
+                <label htmlFor="name"> Name </label>
 
-              <input
-                name="name"
-                type="text"
-                value={input.name}
-                placeholder="Enter Name"
-                className="input__name_form"
-                id="name"
+                <input
+                  name="name"
+                  type="text"
+                  value={input.name}
+                  placeholder="Enter Name"
+                  className="input__name_form"
+                  id="name"
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+
+              <div className="create__inputs_name-img">
+                <label htmlFor="image">Image </label>
+                <input
+                  name="background_image"
+                  type="text"
+                  value={input.background_image}
+                  placeholder="Enter Image"
+                  className="input__image_form"
+                  id="image"
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+            </div>
+            <div className="create__inputs">
+              <div className="create__inputs_rating-released create__input_rating">
+                <label htmlFor="rating">Rating </label>
+
+                <input
+                  name="rating"
+                  type="number"
+                  placeholder="Enter Rating"
+                  className="input__rating_form"
+                  min="1"
+                  max="5"
+                  step="0.01"
+                  id="rating"
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+
+              <div className="create__inputs_rating-released">
+                <label htmlFor="date">Release Date</label>
+
+                <input
+                  name="released"
+                  type="date"
+                  className="input__date_form"
+                  min="1900-04-01"
+                  max="2022-08-30"
+                  id="date"
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+            </div>
+
+            <div className="create__inputs_message">
+              <label htmlFor="description">Description </label>
+              <textarea
+                name="description"
+                placeholder="Enter Description"
+                value={input.description}
+                className="input__description_form"
+                id="description"
                 onChange={(e) => handleChange(e)}
               />
             </div>
 
-            <div className="create__inputs_name-img">
-              <label htmlFor="image">Image </label>
-              <input
-                name="background_image"
-                type="text"
-                value={input.background_image}
-                placeholder="Enter Image"
-                className="input__image_form"
-                id="image"
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-          </div>
-          <div className="create__inputs">
-            <div className="create__inputs_rating-released create__input_rating">
-              <label htmlFor="rating">Rating </label>
+            <div className="create__selects">
+              <div className="create__inputs_selects">
+                <label htmlFor="">Genders</label>
+                <select
+                  name="gender"
+                  className="input__gender_form"
+                  onChange={(e) => handleSelectGenders(e)}
+                >
+                  <option value="All">All</option>
+                  {allGenders?.map((el) => (
+                    <option value={`${el._id},${el.name}`} key={el._id}>
+                      {el.name}
+                    </option>
+                  ))}
+                </select>
 
-              <input
-                name="rating"
-                type="number"
-                placeholder="Enter Rating"
-                className="input__rating_form"
-                min="1"
-                max="5"
-                step="0.01"
-                id="rating"
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
+                <div className="create__render_content">
+                  {input.genders &&
+                    input.genders.map((e, index) => (
+                      <div key={index} className="create__render_button">
+                        <span
+                          className="render__btn"
+                          onClick={() => handleDeleteGenders(e)}
+                          key={index}
+                        >
+                          {e.split(",").pop()}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
 
-            <div className="create__inputs_rating-released">
-              <label htmlFor="date">Release Date</label>
+              <div className="create__inputs_selects">
+                <label htmlFor="">Types of Platforms </label>
+                <select
+                  name="platforms"
+                  className="input__platform_form"
+                  onChange={(e) => handleSelectPlatforms(e)}
+                >
+                  <option value="All">All</option>
+                  {allPlatforms?.map((item, index) => (
+                    <option value={item.name} key={index}>
+                      {item.name}
+                    </option>
+                  ))}
+                </select>
 
-              <input
-                name="released"
-                type="date"
-                className="input__date_form"
-                min="1900-04-01"
-                max="2022-08-30"
-                id="date"
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-          </div>
-
-          <div className="create__inputs_message">
-            <label htmlFor="description">Description </label>
-            <textarea
-              name="description"
-              placeholder="Enter Description"
-              value={input.description}
-              className="input__description_form"
-              id="description"
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-
-          <div className="create__selects">
-            <div className="create__inputs_selects">
-              <label htmlFor="">Genders</label>
-              <select
-                name="gender"
-                className="input__gender_form"
-                onChange={(e) => handleSelectGenders(e)}
-              >
-                <option value="All">All</option>
-                {allGenders?.map((el) => (
-                  <option value={`${el._id},${el.name}`} key={el._id}>
-                    {el.name}
-                  </option>
-                ))}
-              </select>
-
-              <div className="create__render_content">
-                {input.genders &&
-                  input.genders.map((e, index) => (
+                <div className="create__render_content">
+                  {input.platforms.map((e, index) => (
                     <div key={index} className="create__render_button">
                       <span
                         className="render__btn"
-                        onClick={() => handleDeleteGenders(e)}
-                        key={index}
+                        onClick={() => handleDeletePlatforms(e)}
                       >
-                        {e.split(",").pop()}
+                        {e}
                       </span>
                     </div>
                   ))}
+                </div>
               </div>
             </div>
-
-            <div className="create__inputs_selects">
-              <label htmlFor="">Types of Platforms </label>
-              <select
-                name="platforms"
-                className="input__platform_form"
-                onChange={(e) => handleSelectPlatforms(e)}
+            <div className="create__btn">
+              <button
+                type="reset"
+                className="btn__form_reset"
+                onClick={(e) => handleReset(e)}
               >
-                <option value="All">All</option>
-                {allPlatforms?.map((item, index) => (
-                  <option value={item.name} key={index}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
-
-              <div className="create__render_content">
-                {input.platforms.map((e, index) => (
-                  <div key={index} className="create__render_button">
-                    <span
-                      className="render__btn"
-                      onClick={() => handleDeletePlatforms(e)}
-                    >
-                      {e}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                RESET
+              </button>
+              <button
+                type="submit"
+                className="btn__form_submit"
+                onClick={(e) => handleSubmit(e)}
+                disabled={Object.keys(errors).length === 0 ? "" : true}
+              >
+                Create
+              </button>
             </div>
-          </div>
-          <div className="create__btn">
-            <button
-              type="reset"
-              className="btn__form_reset"
-              onClick={(e) => handleReset(e)}
-            >
-              RESET
-            </button>
-            <button
-              type="submit"
-              className="btn__form_submit"
-              onClick={(e) => handleSubmit(e)}
-              disabled={Object.keys(errors).length === 0 ? "" : true}
-            >
-              Create videogames
-            </button>
           </div>
         </form>
       </div>
