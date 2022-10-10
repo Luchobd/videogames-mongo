@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../stylesheets/NavBar.css";
-import MiniLogo from "../images/logo.png";
+// import MiniLogo from "../images/logo.png";
 
 function NavBar() {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 
 import "../stylesheets/Paginated.css";
@@ -17,6 +17,9 @@ function Paginated({ videogamesPerPage, allVideogames, paginated }) {
   //     dispatch(getVideogames());
   //     setCurrentPege(1);
   //   };
+
+  // const [currentPage, setCurrentPege] = useState(1);
+
   return (
     <div className="paginated__principal_container">
       <picture className="paginated__logo">
@@ -34,7 +37,7 @@ function Paginated({ videogamesPerPage, allVideogames, paginated }) {
       </nav>
 
       <div>
-        <SearchBar />
+        <SearchBar setCurrentPege={""} />
       </div>
     </div>
   );

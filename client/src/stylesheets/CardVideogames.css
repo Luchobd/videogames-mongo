@@ -58,3 +58,9 @@
 .card__rating {
   font-size: 1.1rem;
 }
+
+@media (max-width: 650px) {
+  .card__container {
+    height: 45vh;
+  }
+}

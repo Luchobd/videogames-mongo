@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { getNameVideogames } from "../redux/actions";
 import "../stylesheets/SearchBar.css";
 
-function SearchBar() {
+function SearchBar({ setCurrentPege }) {
   const dispatch = useDispatch();
 
   const [name, setName] = useState("");
