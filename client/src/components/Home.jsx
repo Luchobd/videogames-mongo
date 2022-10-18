@@ -43,12 +43,11 @@ function Home() {
     dispatch(getGenders());
   }, [dispatch]);
 
-  //handles
-  // const handleClickReset = (e) => {
-  //   e.preventDefault();
-  //   dispatch(getVideogames());
+  // const handleCurrent = () => {
   //   setCurrentPege(1);
   // };
+
+  // handleCurrent();
 
   const handleFilterSelectGenders = (e) => {
     e.preventDefault();
@@ -86,6 +85,7 @@ function Home() {
             videogamesPerPage={videogamesPerPage}
             allVideogames={allVideogames.length}
             paginated={paginated}
+            setCurrentPege={setCurrentPege}
           />
 
           <div className="home__container_select">

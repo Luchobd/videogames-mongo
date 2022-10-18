@@ -1,24 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchBar from "./SearchBar";
 
 import "../stylesheets/Paginated.css";
 import Logo from "../images/GAMEWORLD3.png";
 
-function Paginated({ videogamesPerPage, allVideogames, paginated }) {
+function Paginated({
+  videogamesPerPage,
+  allVideogames,
+  paginated,
+  setCurrentPege,
+}) {
   const pageNumbers = [];
   let page = 1;
   while (page <= Math.ceil(allVideogames / videogamesPerPage)) {
     pageNumbers.push(page);
     page++;
   }
-
-  //   const handleClickReset = (e) => {
-  //     e.preventDefault();
-  //     dispatch(getVideogames());
-  //     setCurrentPege(1);
-  //   };
-
-  // const [currentPage, setCurrentPege] = useState(1);
 
   return (
     <div className="paginated__principal_container">
@@ -37,7 +34,7 @@ function Paginated({ videogamesPerPage, allVideogames, paginated }) {
       </nav>
 
       <div>
-        <SearchBar setCurrentPege={""} />
+        <SearchBar setCurrentPege={setCurrentPege} />
       </div>
     </div>
   );

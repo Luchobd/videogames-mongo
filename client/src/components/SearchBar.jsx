@@ -16,6 +16,7 @@ function SearchBar({ setCurrentPege }) {
   const handeleSubmit = (e) => {
     e.preventDefault();
     dispatch(getNameVideogames(name));
+    setCurrentPege(1);
     setName("");
   };
 

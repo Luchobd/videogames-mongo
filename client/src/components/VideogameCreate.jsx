@@ -66,6 +66,14 @@ function VideoGameCreate() {
     );
   };
 
+  const handleErrorSubmit = () => {
+    setErrors(
+      validate({
+        ...input,
+      })
+    );
+  };
+
   const handleSelectGenders = (e) => {
     if (!input.genders.includes(e.target.value))
       if (e.target.value !== "All")
@@ -108,11 +116,9 @@ function VideoGameCreate() {
 
     const submitFunction = () => {
       const selectId = input.genders.map((e) => functionId(e));
-
       const submit = input;
       submit.genders = selectId;
-      dispatch(postVideogames(submit));
-      // console.log(submit);
+      dispatch(postVideogames(input));
     };
     submitFunction();
 
@@ -142,10 +148,6 @@ function VideoGameCreate() {
       platforms: [],
     });
   };
-
-  // useEffect(() => {
-
-  // }, []);
 
   return (
     <div>
@@ -325,7 +327,7 @@ function VideoGameCreate() {
               <button
                 type="submit"
                 className="btn__form_submit"
-                onClick={(e) => handleSubmit(e)}
+                onClick={handleErrorSubmit}
                 disabled={Object.keys(errors).length === 0 ? "" : true}
               >
                 Create
