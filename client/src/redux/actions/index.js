@@ -13,10 +13,10 @@ export const CLEAN_FILTER = "CLEAN_FILTER";
 
 // All Videogames
 export const getVideogames = () => async (dispatch) => {
-  // const resp = await axios.get(
-  //   "https://videogames-mongo.up.railway.app/videogames"
-  // );
-  const resp = await axios.get("http://localhost:3001/videogames");
+  const resp = await axios.get(
+    "https://videogames-deploy-back.onrender.com/videogames"
+  );
+  // const resp = await axios.get("http://localhost:3001/videogames");
   dispatch({
     type: "GET_VIDEOGAMES",
     payload: resp.data,
@@ -26,10 +26,10 @@ export const getVideogames = () => async (dispatch) => {
 // All Genders
 export function getGenders() {
   return async function (dispatch) {
-    // const resp = await axios.get(
-    //   "https://videogames-mongo.up.railway.app/genders"
-    // );
-    const resp = await axios.get("http://localhost:3001/genders");
+    const resp = await axios.get(
+      "https://videogames-deploy-back.onrender.com/genders"
+    );
+    // const resp = await axios.get("http://localhost:3001/genders");
     dispatch({
       type: "GET_GENDERS",
       payload: resp.data,
@@ -40,8 +40,8 @@ export function getGenders() {
 // Create Rute
 export function postVideogames(payload) {
   return async function (dispatch) {
-    // const rutaPost = "https://videogames-mongo.up.railway.app/videogames";
-    const rutaPost = "http://localhost:3001/videogames";
+    const rutaPost = "https://videogames-deploy-back.onrender.com/videogames";
+    // const rutaPost = "http://localhost:3001/videogames";
     const post = await axios.post(rutaPost, payload);
     return post;
   };
@@ -50,8 +50,8 @@ export function postVideogames(payload) {
 // Rute Query but name
 export function getNameVideogames(name) {
   return async function (dispatch) {
-    // const rutaQueryVideogames = `https://videogames-mongo.up.railway.app/videogames?name=${name}`;
-    const rutaQueryVideogames = `http://localhost:3001/videogames?name=${name}`;
+    const rutaQueryVideogames = `https://videogames-deploy-back.onrender.com/videogames?name=${name}`;
+    // const rutaQueryVideogames = `http://localhost:3001/videogames?name=${name}`;
 
     const queryVideogames = await axios.get(rutaQueryVideogames);
     return dispatch({
@@ -64,8 +64,8 @@ export function getNameVideogames(name) {
 // Detail Rute
 export function getDetail(id) {
   return async function (dispatch) {
-    // const rutaParams = `https://videogames-mongo.up.railway.app/videogames/${id}`;
-    const rutaParams = `http://localhost:3001/videogames/${id}`;
+    const rutaParams = `https://videogames-deploy-back.onrender.com/videogames/${id}`;
+    // const rutaParams = `http://localhost:3001/videogames/${id}`;
     const detail = await axios.get(rutaParams);
     return dispatch({
       type: "GET_DETAILS",
